@@ -1,12 +1,9 @@
 'use strict';
 
-const { db, Users } = require('../lib/model');
+const { db,Users } = require('../../lib/model');
 
-beforeAll( async () => {
+beforeAll(async () => {
   await db.sync();
-});
-afterAll( async () => {
-  await db.drop();
 });
 
 describe('Testing Server CRUD', () => {

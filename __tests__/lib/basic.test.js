@@ -1,19 +1,7 @@
 'use strict';
 
 const { expect } = require('@jest/globals');
-const Basic = require('../lib/middleware/basic/basic');
-const { db, Users } = require('../lib/model');
-
-let userInfo = {
-  admin: { username: 'admin', password: 'password' },
-};
-
-beforeAll(async () => {
-  await db.sync();
-});
-afterAll(async () => {
-  await db.drop();
-});
+const Basic = require('../../lib/middleware/basic/basic');
 
 describe('Testing Server CRUD', () => {
   // Mock the express req/res/next that we need for each middleware call

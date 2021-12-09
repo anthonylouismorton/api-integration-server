@@ -1,18 +1,12 @@
 const supertest = require('supertest');
-const { app } = require('../lib/server');
-const { db } = require('../lib/model/index');
+const { app } = require('../../lib/server');
+const { db } = require('../../lib/model');
 
 const mockRequest = supertest(app);
 
-beforeAll( (done) => {
-  db.sync();
-  done();
+beforeAll(async () => {
+  await db.sync();
 });
-afterAll((done) => {
-  db.close();
-  done();
-});
-
 
 describe('Testing Signup route', () => {
 

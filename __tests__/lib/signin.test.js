@@ -3,8 +3,8 @@
 require('dotenv');
 const SECRET = process.env.SECRET || 'secret';
 const supertest = require('supertest');
-const server = require('../lib/server.js');
-const { db } = require('../lib/model/index');
+const server = require('../../lib/server.js');
+const { db } = require('../../lib/model');
 const base64 = require('base-64');
 const { expect } = require('@jest/globals');
 
@@ -12,9 +12,6 @@ const authRequest = supertest(server.app);
 
 beforeAll(async () => {
   await db.sync();
-});
-afterAll(async () => {
-  await db.drop();
 });
 
 describe('Testing Auth Routes', () => {

@@ -2,24 +2,17 @@
 
 process.env.SECRET = 'secret';
 
-const { db, Users } = require('../lib/model');
-
-const bearerAuth = require('../lib/middleware/bearer.js');
-
-beforeAll(async () => {
-  await db.sync();
-  // done();
-});
-
-afterAll(async () => {
-  await db.drop();
-  // done();
-});
+const { db, Users } = require('../../lib/model');
+const bearerAuth = require('../../lib/middleware/bearer.js');
 
 let users = {
   admin: { username: 'admin', password: 'password', role: 'admin' },
   user: { username: 'user', password: 'password', role: 'user' },
 };
+
+beforeAll(async () => {
+  await db.sync();
+});
 
 describe('Auth Router', () => {
 

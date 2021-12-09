@@ -1,19 +1,14 @@
 'use strict';
 
 const supertest = require('supertest');
-const { app } = require('../lib/server.js');
+const { app } = require('../../lib/server.js');
+const { db } = require('../../lib/model');
 const request = supertest(app);
-// connect to our test db
-const { db } = require('../lib/model');
 
 
 beforeAll(async () => {
   await db.sync();
 });
-afterAll(async () => {
-  await db.drop();
-});
-
 
 describe('Testing categories routes',()=>{
   it('Should be able to add category with post route ', async()=>{

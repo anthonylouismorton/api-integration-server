@@ -1,12 +1,9 @@
 'use strict';
 
-const { db, Candidates } = require('../lib/model');
+const { db, Candidates } = require('../../lib/model');
 
 beforeAll(async () => {
   await db.sync();
-});
-afterAll(async () => {
-  await db.drop();
 });
 
 describe('tesing the Candidates Model', () => {

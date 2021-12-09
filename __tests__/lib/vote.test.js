@@ -1,15 +1,12 @@
 'use strict';
 
 const supertest = require('supertest');
-const { app } = require('../lib/server');
-const { db, Candidates } = require('../lib/model');
+const {  app } = require('../../lib/server');
+const { db, Candidates } = require('../../lib/model');
 const mockRequest = supertest(app);
 
 beforeAll(async () => {
   await db.sync();
-});
-afterAll(async () => {
-  await db.drop();
 });
 
 describe('Testing the Vote feature', () => {

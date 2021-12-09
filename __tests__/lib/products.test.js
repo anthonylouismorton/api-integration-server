@@ -1,10 +1,10 @@
 'use strict';
 
 const supertest = require('supertest');
-const { app } = require('../lib/server.js');
+const { app } = require('../../lib/server.js');
 const request = supertest(app);
 // connect to our test db
-const { db, Categories } = require('../lib/model');
+const { db, Categories } = require('../../lib/model');
 
 let testCat = null;
 
@@ -15,9 +15,6 @@ beforeAll(async () => {
     normalizedName: 'test',
     description: 'words words',
   });
-});
-afterAll(async () => {
-  await db.drop();
 });
 
 describe('Testing the products router', () => {
