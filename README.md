@@ -107,3 +107,44 @@ Clients with the following authorized roles can perform specific request types:
   * Response:
     * 200 - authorized
     * 401 - unauthorized
+
+### As a User, I can create and fetch Products, so I can manage a store front of products
+
+Clients are able to Create and Read `Producst` from a producst model using the following request:
+
+
+* Route: GET `/products`
+  * Body: none
+  * Headers: none
+  * Response:
+    * Status: 200
+    * Body: Content-Type: JSON
+      * Count: Number of total products
+      * Results: `[ Products ]`
+* Route: POST `/products`
+  * Body: { name: STRING, categoryId: UUID }
+  * Headers: none
+  * Response
+    * Status: 201
+    * Body: Content-Type: JSON
+      * `{ Product }`
+
+### As a User, I can create and fetch Categories, So I can manage store front products by category
+
+Client are able to Create and Read `Categories` from a categories model using the following request:
+
+* Route: GET `/categories`
+  * Body: none
+  * Headers: none
+  * Response:
+    * Status: 200
+    * Body: Content-Type: JSON
+      * Count: Number of total categories
+      * Results: `[ Categories ]`
+* Route: POST `/categories`
+  * Body: { name: STRING }
+  * Headers: none
+  * Response
+    * Status: 201
+    * Body: Content-Type: JSON
+      * `{` Category }`
