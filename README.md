@@ -112,7 +112,6 @@ Clients with the following authorized roles can perform specific request types:
 
 Clients are able to Create and Read `Producst` from a producst model using the following request:
 
-
 * Route: GET `/products`
   * Body: none
   * Headers: none
