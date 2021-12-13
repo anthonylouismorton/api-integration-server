@@ -22,6 +22,7 @@ describe('Testing the products router', () => {
   it('should create a product', async () => {
     let product = {
       name: 'Test Product',
+      description: 'test',
       categoryId: testCat.id,
       count: 0,
       price: 100,
